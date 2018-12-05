@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 public abstract class Inits {
 
     @FXML
-    protected TextArea wat;
+    protected TextArea textArea;
 
 
     @FXML

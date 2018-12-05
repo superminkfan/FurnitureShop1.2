@@ -1,17 +1,27 @@
 package grandPac.mainWork;
 
+import grandPac.controller.Controller;
 import grandPac.order.Furniture;
 
 import java.util.*;
 
 public class AssemblyShop {
     private List<Furniture> items = new ArrayList<>();
+    private Controller controller;
+
+    public AssemblyShop(Controller controller) {
+        this.controller = controller;
+
+    }
 
     public void setItems(List<Furniture> items) {
         this.items = items;
     }
 
     public void doService(Consumer c, Map<String, Integer> request, BilletShop billetShop){
+
+      controller.getTA().appendText("");
+
         int total = 0;
         Iterator it = request.entrySet().iterator();
         while(it.hasNext()){
@@ -19,12 +29,16 @@ public class AssemblyShop {
             int n = (Integer)pair.getValue();
             Furniture i = items.stream().filter(item-> pair.getKey().equals(item.getName())).findFirst().orElse(null);
             if(i == null){
+                controller.getTA().appendText("Такой мебели нет\n");
+
                 System.out.println("Такой мебели нет");
             }
             total += i.getPrice() * n;
         }
 
         if(total > c.getMoney()){
+            controller.getTA().appendText("У вас не хватает денег\n");
+
             System.out.println("У вас не хватает денег");
         }
         else {
@@ -39,6 +53,8 @@ public class AssemblyShop {
                                 equals(pair.getKey())).
                         findFirst().orElse(null);
                 if(mat == null){
+                    controller.getTA().appendText("Такой мебели нет\n");
+
                     System.out.println("Такой мебели нет");
                 }
 
@@ -55,7 +71,11 @@ public class AssemblyShop {
                     }
                 }
             }
+            controller.getTA().appendText("Ваш заказ: " + total + " " + request.entrySet() + "\n");
+
             System.out.println("Ваш заказ: " + total + " " + request.entrySet());
+            controller.getTA().appendText("Требуется такое количество деталей: " + RequestMaterials + "\n");
+
             System.out.println("Требуется такое количество деталей: " + RequestMaterials);
 
 
@@ -63,7 +83,11 @@ public class AssemblyShop {
             DoneMaterials = billetShop.doMaterials(RequestMaterials);
             if(DoneMaterials == RequestMaterials){
                 c.setMoney(c.getMoney()-total);
+                controller.getTA().appendText("Ваш заказ равен: " + total + "\n");
+
                 System.out.println("Ваш заказ равен: " + total);
+                controller.getTA().appendText("Со счета списано: " + total + " рублей" + "\n");
+
                 System.out.println("Со счета списано: " + total + " рублей");
             }
             else{
@@ -87,11 +111,18 @@ public class AssemblyShop {
                      }
                  }
                 if (total > 0) {
+                    controller.getTA().appendText("Древесиы хватает на: " + new_request + "\n");
+
                     System.out.println("Древесиы хватает на: " + new_request);
+                    controller.getTA().appendText("Со счета снято " + total + " рублей\n");
+
                     System.out.println("Со счета снято " + total + " рублей");
                     c.setMoney(c.getMoney() - total);
-                } else
+                } else {
+                    controller.getTA().appendText("У нас не хватает материалов ни на какую мебель\n");
+
                     System.out.println("У нас не хватает материалов ни на какую мебель");
+                }
             }
         }
 

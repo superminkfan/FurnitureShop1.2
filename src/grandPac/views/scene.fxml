@@ -9,24 +9,24 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grandPac.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grandPac.controller.Controller">
     <children>
-        <Label layoutX="79.0" layoutY="320.0" text="Табурет!" />
+        <Label layoutX="24.0" layoutY="319.0" text="Табурет плохой" />
         <TextField fx:id="taburet_plohoi_inp" layoutX="145.0" layoutY="315.0" prefHeight="31.0" prefWidth="128.0" />
-        <Label layoutX="79.0" layoutY="277.0" text="Табурет" />
-        <TextField fx:id="taburet_inp" layoutX="145.0" layoutY="272.0" prefHeight="31.0" prefWidth="128.0" />
-        <Label layoutX="79.0" layoutY="238.0" text="Шкаф" />
-        <TextField fx:id="shkaf_inp" layoutX="145.0" layoutY="233.0" prefHeight="31.0" prefWidth="128.0" />
-        <Label layoutX="79.0" layoutY="199.0" text="Тумба" />
-        <TextField fx:id="tumba_inp" layoutX="145.0" layoutY="194.0" prefHeight="31.0" prefWidth="128.0" />
-        <Label layoutX="79.0" layoutY="160.0" text="Кухня" />
-        <TextField fx:id="kitchen_inp" layoutX="145.0" layoutY="155.0" prefHeight="31.0" prefWidth="128.0" />
-        <Label layoutX="79.0" layoutY="120.0" text="Дерево" />
-        <TextField fx:id="wood_inp" layoutX="145.0" layoutY="115.0" prefHeight="31.0" prefWidth="128.0" />
-        <TextField fx:id="money_inp" layoutX="145.0" layoutY="76.0" prefHeight="31.0" prefWidth="128.0" />
-        <Label layoutX="79.0" layoutY="81.0" text="Деньги" />
-        <Button fx:id="go_bt" layoutX="128.0" layoutY="385.0" mnemonicParsing="true" onAction="#Click" text="Button" />
-      <TextArea fx:id="wat" layoutX="378.0" layoutY="110.0" prefHeight="200.0" prefWidth="200.0" />
+        <Label layoutX="24.0" layoutY="276.0" text="Табурет" />
+        <TextField fx:id="taburet_inp" layoutX="95.0" layoutY="272.0" prefHeight="31.0" prefWidth="178.0" />
+        <Label layoutX="24.0" layoutY="237.0" text="Шкаф" />
+        <TextField fx:id="shkaf_inp" layoutX="95.0" layoutY="233.0" prefHeight="31.0" prefWidth="178.0" />
+        <Label layoutX="24.0" layoutY="198.0" text="Тумба" />
+        <TextField fx:id="tumba_inp" layoutX="95.0" layoutY="194.0" prefHeight="31.0" prefWidth="178.0" />
+        <Label layoutX="24.0" layoutY="159.0" text="Кухня" />
+        <TextField fx:id="kitchen_inp" layoutX="95.0" layoutY="155.0" prefHeight="31.0" prefWidth="178.0" />
+        <Label layoutX="24.0" layoutY="119.0" text="Дерево" />
+        <TextField fx:id="wood_inp" layoutX="95.0" layoutY="115.0" prefHeight="31.0" prefWidth="178.0" />
+        <TextField fx:id="money_inp" layoutX="95.0" layoutY="76.0" prefHeight="31.0" prefWidth="178.0" />
+        <Label layoutX="24.0" layoutY="80.0" text="Деньги" />
+        <Button fx:id="go_bt" layoutX="75.0" layoutY="371.0" mnemonicParsing="true" onAction="#Click" prefHeight="62.0" prefWidth="218.0" text="go" />
+      <TextArea fx:id="textArea" layoutX="293.0" layoutY="70.0" prefHeight="278.0" prefWidth="478.0" />
     </children>
 
 </AnchorPane>
