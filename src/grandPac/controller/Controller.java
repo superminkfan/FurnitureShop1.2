@@ -83,10 +83,7 @@ public class Controller extends Inits{
 
 
         Consumer consumer = new Consumer(money);
-       /* request.put("Кухня", 1);
-        request.put("Шкаф", 1);
-        request.put("Тумба", 1);
-        request.put("Табурет хороший", 1);*/
+     
         consumer.requestOrder(request, assemblyShop, billetShop);
     }
 
